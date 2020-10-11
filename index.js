@@ -35,7 +35,7 @@ source.onmessage = (event) => {
         let strikes = "".padStart(game.atBatStrikes, "⚪").padStart(2,"⚫");
         let outs = "".padStart(game.halfInningOuts, "⚪").padStart(2,"⚫");
 
-        document.querySelector(".infobox").innerHTML = `<span class=bases>${bases}</span>${balls}<br>${strikes}<br>${outs}`
+        document.querySelector(".infobox").innerHTML = `<span class=bases>${game.topOfInning ? "🔼":"🔽"}${game.inning+1}<br>${bases}</span>${balls}<br>${strikes}<br>${outs}`
         document.querySelector(".homeScore").innerText = game.homeScore
         document.querySelector(".awayScore").innerText = game.awayScore
         document.querySelector(".gameData").innerText = game.lastUpdate
