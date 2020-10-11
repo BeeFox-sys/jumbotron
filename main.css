@@ -80,4 +80,9 @@ body {
     grid-area: i;
     place-self: center;
     text-align: right;
+    line-height: 1.4;
+}
+.bases{
+    text-align: center;
+    display: block;
 }

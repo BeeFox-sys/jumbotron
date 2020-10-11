@@ -27,13 +27,15 @@ source.onmessage = (event) => {
         document.querySelector(".awayName").innerText = game.awayTeamNickname
         document.querySelector(".awayName").setAttribute("style",`color:${game.awayTeamColor}`)
 
-
-        // let bases = ""
+        let bases = "".padStart(game.topOfInning ? game.awayBases-1 : game.homeBases-1,"⬛")
+        for (const base of game.basesOccupied) {
+            bases = bases.substr(0, base) + "⬜" + bases.substr(base + 1)
+        }
         let balls = "".padStart(game.atBatBalls, "⚪").padStart(3,"⚫");
         let strikes = "".padStart(game.atBatStrikes, "⚪").padStart(2,"⚫");
         let outs = "".padStart(game.halfInningOuts, "⚪").padStart(3,"⚫");
 
-        document.querySelector(".infobox").innerHTML = `${balls}<br>${strikes}<br>${outs}`
+        document.querySelector(".infobox").innerHTML = `<span class=bases>${bases}</span>${balls}<br>${strikes}<br>${outs}`
         document.querySelector(".homeScore").innerText = game.homeScore
         document.querySelector(".awayScore").innerText = game.awayScore
         document.querySelector(".gameData").innerText = game.lastUpdate
