@@ -79,4 +79,5 @@ body {
 .infobox{
     grid-area: i;
     place-self: center;
+    text-align: right;
 }

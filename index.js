@@ -26,7 +26,14 @@ source.onmessage = (event) => {
         document.querySelector(".homeName").setAttribute("style",`color:${game.homeTeamColor}`)
         document.querySelector(".awayName").innerText = game.awayTeamNickname
         document.querySelector(".awayName").setAttribute("style",`color:${game.awayTeamColor}`)
-        document.querySelector(".infobox").innerHTML = `${game.atBatBalls} Balls<br>${game.atBatStrikes} Strikes<br>${game.halfInningOuts} Outs`
+
+
+        // let bases = ""
+        let balls = "".padStart(game.atBatBalls, "⚪").padStart(3,"⚫");
+        let strikes = "".padStart(game.atBatStrikes, "⚪").padStart(2,"⚫");
+        let outs = "".padStart(game.halfInningOuts, "⚪").padStart(3,"⚫");
+
+        document.querySelector(".infobox").innerHTML = `${balls}<br>${strikes}<br>${outs}`
         document.querySelector(".homeScore").innerText = game.homeScore
         document.querySelector(".awayScore").innerText = game.awayScore
         document.querySelector(".gameData").innerText = game.lastUpdate
