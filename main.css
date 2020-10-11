@@ -52,6 +52,7 @@ body {
     cursor: pointer;
     color: white;
     appearance: none;
+    text-align-last:center;
 }
 
 .awayName{
