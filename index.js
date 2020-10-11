@@ -2,6 +2,12 @@ var source = new EventSource("https://cors-proxy.blaseball-reference.com/events/
 let day = 0
 let gameID;
 
+var noSleep = new NoSleep();
+document.addEventListener('click', function enableNoSleep() {
+    document.removeEventListener('click', enableNoSleep, false);
+    noSleep.enable();
+  }, false);
+
 
 source.onmessage = (event) => {
     let data = JSON.parse(event.data);
