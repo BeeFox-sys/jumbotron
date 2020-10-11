@@ -33,7 +33,7 @@ source.onmessage = (event) => {
         }
         let balls = "".padStart(game.atBatBalls, "⚪").padStart(3,"⚫");
         let strikes = "".padStart(game.atBatStrikes, "⚪").padStart(2,"⚫");
-        let outs = "".padStart(game.halfInningOuts, "⚪").padStart(3,"⚫");
+        let outs = "".padStart(game.halfInningOuts, "⚪").padStart(2,"⚫");
 
         document.querySelector(".infobox").innerHTML = `<span class=bases>${bases}</span>${balls}<br>${strikes}<br>${outs}`
         document.querySelector(".homeScore").innerText = game.homeScore
