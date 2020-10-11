@@ -26,6 +26,7 @@ source.onmessage = (event) => {
         document.querySelector(".homeName").setAttribute("style",`color:${game.homeTeamColor}`)
         document.querySelector(".awayName").innerText = game.awayTeamNickname
         document.querySelector(".awayName").setAttribute("style",`color:${game.awayTeamColor}`)
+        document.querySelector(".infobox").innerHTML = `${game.atBatBalls} Balls<br>${game.atBatStrikes} Strikes<br>${game.halfInningOuts} Outs`
         document.querySelector(".homeScore").innerText = game.homeScore
         document.querySelector(".awayScore").innerText = game.awayScore
         document.querySelector(".gameData").innerText = game.lastUpdate
